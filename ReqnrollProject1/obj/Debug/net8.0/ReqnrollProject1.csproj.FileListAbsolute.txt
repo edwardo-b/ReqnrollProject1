@@ -447,3 +447,4 @@ C:\Users\obedd\MyAutomations\ReqnrollProject1\ReqnrollProject1\bin\Debug\net8.0\
 C:\Users\obedd\MyAutomations\ReqnrollProject1\ReqnrollProject1\bin\Debug\net8.0\playwright.ps1
 C:\Users\obedd\MyAutomations\ReqnrollProject1\ReqnrollProject1\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\obedd\MyAutomations\ReqnrollProject1\ReqnrollProject1\bin\Debug\net8.0\Microsoft.Playwright.dll
+C:\Users\obedd\MyAutomations\ReqnrollProject1\ReqnrollProject1\obj\Debug\net8.0\ReqnrollProject1.sourcelink.json

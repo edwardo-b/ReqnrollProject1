@@ -1,1 +1,15 @@
 .vs/
+# Build results
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+
+# Playwright browser binaries (if applicable)
+ms-playwright/
+
+# Other common
+*.log

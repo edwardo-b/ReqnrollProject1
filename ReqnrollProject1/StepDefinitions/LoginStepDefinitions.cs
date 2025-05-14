@@ -12,16 +12,14 @@ namespace ReqnrollProject1.StepDefinitions
         private readonly ScenarioContext _scenarioContext;
         private readonly IObjectContainer _objectContainer;
         private readonly IPage _page;
-        private readonly IBrowser _browser;
-        private readonly IPlaywright _playwright;
+        
 
         public LoginStepDefinitions(ScenarioContext scenarioContext, IObjectContainer objectContainer)
         {
             _scenarioContext = scenarioContext;
             _objectContainer = objectContainer;
             _page = _objectContainer.Resolve<IPage>();
-            _browser = _objectContainer.Resolve<IBrowser>();
-            _playwright = _objectContainer.Resolve<IPlaywright>();
+            
         }
         [Given("I launch the application URL")]
         public async Task GivenILaunchTheApplicationURL()
