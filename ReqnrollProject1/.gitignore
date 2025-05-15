@@ -13,3 +13,4 @@ ms-playwright/
 
 # Other common
 *.log
+*.tmp
