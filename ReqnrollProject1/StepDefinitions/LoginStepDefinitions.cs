@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Playwright;
 using Reqnroll;
 using Reqnroll.BoDi;
+using ReqnrollProject1.Pages;
 using ReqnrollProject1.Utils;
 
 namespace ReqnrollProject1.StepDefinitions
@@ -15,6 +16,7 @@ namespace ReqnrollProject1.StepDefinitions
         private readonly IObjectContainer _objectContainer;
         private readonly IPage _page;
         private readonly ConfigReader configReader;
+        private readonly LoginPage loginPage;
 
         public LoginStepDefinitions(ScenarioContext scenarioContext, IObjectContainer objectContainer)
         {
@@ -22,6 +24,7 @@ namespace ReqnrollProject1.StepDefinitions
             _objectContainer = objectContainer;
             configReader = new ConfigReader();
             _page = _objectContainer.Resolve<IPage>();
+            loginPage = _objectContainer.Resolve<LoginPage>();
             
         }
         [Given("I launch the application URL")]
