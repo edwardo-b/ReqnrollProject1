@@ -1,12 +1,15 @@
+
 # Ignore build outputs
 bin/
 obj/
 *.tmp
 
-# Ignore VS/VS Code files
-.vscode/
+# Ignore VS and user files
+.vs/
 *.user
 *.suo
-*.userosscache
-*.sln.docstates
+
+# Ignore ReSharper/JetBrains
+.idea/
+*.DotSettings.user
 .vs/
