@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\obedd\\MyAutomations\\ReqnrollProject1\\ReqnrollProject1\\ReqnrollProject1.csproj": {}
+    "C:\\Users\\Edward.Osei-Bonsu\\EdwardsALX\\MyAutomation\\ReqnrollProject1\\ReqnrollProject1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\obedd\\MyAutomations\\ReqnrollProject1\\ReqnrollProject1\\ReqnrollProject1.csproj": {
+    "C:\\Users\\Edward.Osei-Bonsu\\EdwardsALX\\MyAutomation\\ReqnrollProject1\\ReqnrollProject1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\obedd\\MyAutomations\\ReqnrollProject1\\ReqnrollProject1\\ReqnrollProject1.csproj",
+        "projectUniqueName": "C:\\Users\\Edward.Osei-Bonsu\\EdwardsALX\\MyAutomation\\ReqnrollProject1\\ReqnrollProject1.csproj",
         "projectName": "ReqnrollProject1",
-        "projectPath": "C:\\Users\\obedd\\MyAutomations\\ReqnrollProject1\\ReqnrollProject1\\ReqnrollProject1.csproj",
-        "packagesPath": "C:\\Users\\obedd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\obedd\\MyAutomations\\ReqnrollProject1\\ReqnrollProject1\\obj\\",
+        "projectPath": "C:\\Users\\Edward.Osei-Bonsu\\EdwardsALX\\MyAutomation\\ReqnrollProject1\\ReqnrollProject1.csproj",
+        "packagesPath": "C:\\Users\\Edward.Osei-Bonsu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Edward.Osei-Bonsu\\EdwardsALX\\MyAutomation\\ReqnrollProject1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\obedd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Edward.Osei-Bonsu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,18 +39,16 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Bytescout.Spreadsheet": {
+              "target": "Package",
+              "version": "[4.7.1.2054, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.10.0, )"
@@ -57,6 +56,10 @@
             "Microsoft.Playwright": {
               "target": "Package",
               "version": "[1.52.0, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.7.3, )"
             },
             "NUnit3TestAdapter": {
               "target": "Package",
@@ -87,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

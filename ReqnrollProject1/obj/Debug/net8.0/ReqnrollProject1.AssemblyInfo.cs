@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReqnrollProject1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d4eeff4dba0c1f9f5e272ff4f0067791dcc4d0f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8bb0a52d995785be94fac050fc0161c1914f970")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReqnrollProject1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReqnrollProject1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

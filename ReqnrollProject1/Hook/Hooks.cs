@@ -35,7 +35,7 @@ namespace ReqnrollProject1.Hook
             var playwright = await Playwright.CreateAsync();
             var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
-                Headless = true
+                Headless = false
             });
             var context = await browser.NewContextAsync(new BrowserNewContextOptions
             {
