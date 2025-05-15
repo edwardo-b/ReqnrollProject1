@@ -1,8 +1,10 @@
 using System;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using Microsoft.Playwright;
 using Reqnroll;
 using Reqnroll.BoDi;
+using ReqnrollProject1.Utils;
 
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -12,19 +14,20 @@ namespace ReqnrollProject1.StepDefinitions
         private readonly ScenarioContext _scenarioContext;
         private readonly IObjectContainer _objectContainer;
         private readonly IPage _page;
-        
+        private readonly ConfigReader configReader;
 
         public LoginStepDefinitions(ScenarioContext scenarioContext, IObjectContainer objectContainer)
         {
             _scenarioContext = scenarioContext;
             _objectContainer = objectContainer;
+            configReader = new ConfigReader();
             _page = _objectContainer.Resolve<IPage>();
             
         }
         [Given("I launch the application URL")]
         public async Task GivenILaunchTheApplicationURL()
         {
-            await _page.GotoAsync("https://www.spicejet.com/"); // Replace with your application URL
+            await _page.GotoAsync(ConfigReader.GetTestDataValue("AppUrl")); // Replace with your application URL
             Console.WriteLine("Launching the application URL...");
         }
 

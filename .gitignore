@@ -1,7 +1,12 @@
-.vs/
+# Ignore build outputs
 bin/
 obj/
-.vs/
+*.tmp
+
+# Ignore VS/VS Code files
+.vscode/
 *.user
 *.suo
-*.tmp
+*.userosscache
+*.sln.docstates
+.vs/
