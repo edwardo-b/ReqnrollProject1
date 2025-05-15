@@ -7,7 +7,7 @@ namespace ReqnrollProject1.Utils
     {
         public static string GetTestDataValue(string key)
         {
-            var data = JsonConvert.DeserializeObject(File.ReadAllText("Variable/AppSettings.json")) as JObject;
+            var data = JsonConvert.DeserializeObject(File.ReadAllText("C:Users/Edward.Osei-Bonsu/EdwardsALX/MyAutomation/ReqnrollProject1/Variable/AppSettings.json")) as JObject;
             return data![key]!.Value<string>()!;
         }
 
