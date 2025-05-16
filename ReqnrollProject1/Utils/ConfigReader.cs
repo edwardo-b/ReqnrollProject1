@@ -7,13 +7,13 @@ namespace ReqnrollProject1.Utils
     {
         public static string GetTestDataValue(string key)
         {
-            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../Variable/AppSettings.json")) as JObject;
+            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../API/Resources/testdata.json")) as JObject;
             return data![key]!.Value<string>()!;
         }
 
         public static long GetNumericalTestDataValue(string key)
         {
-            var data = JsonConvert.DeserializeObject(File.ReadAllText("Resources/testdata.json")) as JObject;
+            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../API/Resources/testdata.json")) as JObject;
             return Convert.ToInt64(data![key]!.Value<string>()!);
         }
         public static long GetConfigTestDataValue(string key)
@@ -24,7 +24,7 @@ namespace ReqnrollProject1.Utils
 
         public static string GetConfigValue(string key)
         {
-            var data = JsonConvert.DeserializeObject(File.ReadAllText("Resources/config.json")) as JObject;
+            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../Variable/AppSettings.json")) as JObject;
             return data![key]!.Value<string>()!;
         }
     }

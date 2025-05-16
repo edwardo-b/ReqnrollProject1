@@ -1,6 +1,8 @@
 using Microsoft.Playwright;
 using Reqnroll;
 using Reqnroll.BoDi;
+using ReqnrollProject1.Utils;
+using RestSharp;
 using System.Threading.Tasks;
 
 namespace ReqnrollProject1.Hook
@@ -10,6 +12,7 @@ namespace ReqnrollProject1.Hook
     {
         public readonly ScenarioContext _scenarioContext;
         public readonly IObjectContainer _objectContainer;
+        private readonly RestClient _client;
 
         private static readonly string[] IgnoreDefaultArgsArray = { "--enable-automation" }; // Fix for CA1861
 
@@ -17,10 +20,11 @@ namespace ReqnrollProject1.Hook
         {
             _scenarioContext = scenarioContext;
             _objectContainer = objectContainer;
+            _client = new RestClient();
         }
         // For additional details on Reqnroll hooks see https://go.reqnroll.net/doc-hooks
 
-        [BeforeScenario("@tag1")]
+        [BeforeScenario("@UI")]
         public void BeforeScenarioWithTag()
         {
             // Example of filtering hooks using tags. (in this case, this 'before scenario' hook will execute if the feature/scenario contains the tag '@tag1')
@@ -29,7 +33,7 @@ namespace ReqnrollProject1.Hook
             //TODO: implement logic that has to run before executing each scenario
         }
 
-        [BeforeScenario(Order = 1)]
+        [BeforeScenario("@UI",Order = 1)]
         public async Task FirstBeforeScenario()
         {
             var playwright = await Playwright.CreateAsync();
@@ -52,7 +56,7 @@ namespace ReqnrollProject1.Hook
 
         }
 
-        [AfterScenario]
+        [AfterScenario("@UI")]
         public async Task AfterScenario()
         {
             //TODO: implement logic that has to run after executing each scenario
@@ -62,5 +66,25 @@ namespace ReqnrollProject1.Hook
             await browser.CloseAsync();
             playwright.Dispose(); // Ensure proper cleanup
         }
+
+        
+
+        [BeforeScenario ("@API")]
+        public void BeforeAPIScenario()
+        {
+            var client = new RestClient(ConfigReader.GetConfigValue("baseRequestUrl"));
+            _objectContainer.RegisterInstanceAs(client);
+        }
+
+        [AfterScenario("@API")]
+        public void AfterAPIScenario()
+        {
+            if (_scenarioContext.TryGetValue("deleteResource", out var resourceObj) && resourceObj is string resource)
+            {
+                ApiUtils.SendDeleteRequest(resource);
+            }
+        }
+
+
     }
 }
