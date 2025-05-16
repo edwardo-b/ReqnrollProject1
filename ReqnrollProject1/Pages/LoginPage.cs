@@ -23,7 +23,7 @@ namespace ReqnrollProject1.Pages
         private ILocator PhoneNumberField => _page.Locator("xpath = //*[contains(@data-testid,'user-mobileno-input-box')]");
         private ILocator PasswordField => _page.Locator("xpath = //*[contains(@data-testid,'password-input-box-cta')]");
         private ILocator LoginCtaBtn => _page.Locator("xpath = //*[contains(@data-testid,'login-cta')]");
-        private ILocator ErrorMsg => _page.Locator("xpath = //*(contains[text(),'try again'])");
+        private ILocator ErrorMsg => _page.Locator("text=Invalid Username");
 
 
         public async Task clickLoginBtn()
@@ -70,6 +70,7 @@ namespace ReqnrollProject1.Pages
         {
            await PhoneNumberField.ClearAsync();
            string phone = _excelFile.GetPhoneNumber();
+           Console.WriteLine(phone);   
            await PhoneNumberField.FillAsync(phone);
         }
         public async Task enterPassword()
@@ -85,8 +86,16 @@ namespace ReqnrollProject1.Pages
         }
         public async Task assertLoginError()
         {
-            Assert.True(await ErrorMsg.IsVisibleAsync());
+            // string actualText = await ErrorMsg.InnerTextAsync();
+
+            // Or with NUnit:
+            // Assert.That(actualText, Is.EqualTo("Invalid Username/Password"));
+            await Assertions.Expect(ErrorMsg).ToBeVisibleAsync();
+
         }
+
+
+
 
 
 

@@ -31,7 +31,6 @@ namespace ReqnrollProject1.StepDefinitions
         public async Task GivenILaunchTheApplicationURL()
         {
             await _page.GotoAsync(ConfigReader.GetTestDataValue("AppUrl")); // Replace with your application URL
-            await loginPage.enterPhoneNo();
         }
 
         [When("enter the phone number and password")]

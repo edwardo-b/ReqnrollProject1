@@ -36,11 +36,12 @@ namespace ReqnrollProject1.Hook
             var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
                 Headless = false,
-                SlowMo = 5000
+                SlowMo = 1000,
             });
             var context = await browser.NewContextAsync(new BrowserNewContextOptions
             {
-                BypassCSP = true,
+                ViewportSize = new ViewportSize { Width = 1920, Height = 1080 },
+                BypassCSP = true
             });
             var page = await context.NewPageAsync();
 
@@ -52,9 +53,14 @@ namespace ReqnrollProject1.Hook
         }
 
         [AfterScenario]
-        public void AfterScenario()
+        public async Task AfterScenario()
         {
             //TODO: implement logic that has to run after executing each scenario
+            var browser = _objectContainer.Resolve<IBrowser>();
+            var playwright = _objectContainer.Resolve<IPlaywright>();
+
+            await browser.CloseAsync();
+            playwright.Dispose(); // Ensure proper cleanup
         }
     }
 }
