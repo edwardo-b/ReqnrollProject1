@@ -104,12 +104,18 @@ this.ScenarioInitialize(scenarioInfo);
  await testRunner.GivenAsync("I launch the application URL", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 8
- await testRunner.WhenAsync("enter the username and password", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.WhenAsync("I click login button", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 9
- await testRunner.ThenAsync("I click on the login button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.AndAsync("I select mobile option and choose region or \"United Kingdom\" code", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 10
+ await testRunner.AndAsync("enter the phone number and password", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 11
+ await testRunner.ThenAsync("I click on the login button", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 12
  await testRunner.AndAsync("I should see the home page", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }

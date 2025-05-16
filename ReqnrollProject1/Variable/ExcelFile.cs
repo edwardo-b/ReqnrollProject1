@@ -80,29 +80,50 @@ namespace ReqnrollProject1.Variable
             }
         }
 
-        public void phoneNumber2()
+        public string GetPhoneNumber()
+        {
+            string path = @"C:\Users\Edward.Osei-Bonsu\Documents\SpiceJetExcel.xlsx";
+
+            if (!File.Exists(path))
+            {
+                Console.WriteLine("File not found: " + path);
+                return "";
+            }
+
+            try
+            {
+                Spreadsheet document = new Spreadsheet();
+                document.LoadFromFile(path);
+                Worksheet worksheet = document.Workbook.Worksheets[1]; // Check index
+
+                var value = Convert.ToString(worksheet.Cell(0, 1)); // 1-based
+                Console.WriteLine("Phone Number: " + value);
+                return value;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+                return "";
+            }
+        }
+
+
+
+        public string GetPassword()
         {
             string path = @"C:\Users\Edward.Osei-Bonsu\Documents\SpiceJetExcel.xlsx";
             Spreadsheet document = new Spreadsheet();
             document.LoadFromFile(path);
             Worksheet worksheet = document.Workbook.Worksheets[1];
-            var value = Convert.ToString(worksheet.Cell(1, 1));
+
             try
             {
+                var value = Convert.ToString(worksheet.Cell(2, 1));
                 Console.WriteLine(value);
+                return value;
             }
-            catch (Exception e) { Console.WriteLine(e.Message); }
-            /* for (int i = 1; i < 2; i++)
-             {
-                 for (int j = 0; j < 3; j++)
-                 {
-                     var value = Convert.ToString( worksheet.Cell(0, 1));
-
-                     Console.WriteLine(value);
-                 }
-             } */
-
-
+            catch (Exception e) { Console.WriteLine(e.Message); return ""; }
         }
+
     }
 }

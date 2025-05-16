@@ -31,25 +31,41 @@ namespace ReqnrollProject1.StepDefinitions
         public async Task GivenILaunchTheApplicationURL()
         {
             await _page.GotoAsync(ConfigReader.GetTestDataValue("AppUrl")); // Replace with your application URL
-            Console.WriteLine("Launching the application URL...");
+            await loginPage.enterPhoneNo();
         }
 
-        [When("enter the username and password")]
-        public void WhenEnterTheUsernameAndPassword()
+        [When("enter the phone number and password")]
+        public async Task WhenEnterThePhoneNumberAndPassword()
         {
-           Console.WriteLine("Entering the username and password...");
+           await loginPage.enterPhoneNo();
+           await loginPage.enterPassword();
         }
 
         [Then("I click on the login button")]
-        public void ThenIClickOnTheLoginButton()
+        public async Task ThenIClickOnTheLoginButton()
         {
-           Console.WriteLine("Clicking on the login button...");
+         await loginPage.clickSubmitLogin();
         }
 
         [Then("I should see the home page")]
-        public void ThenIShouldSeeTheHomePage()
+        public async Task ThenIShouldSeeTheHomePage()
         {
-            Console.WriteLine("Verifying that the home page is displayed...");
+            await loginPage.assertLoginError();
         }
+        [When("I select mobile option and choose region or {string} code")]
+        public async Task WhenISelectMobileOptionAndChooseRegionOrCode(string country)
+        {
+            await loginPage.clickMobileRegOption();
+            await loginPage.clickCountryCodeBtn();
+            await loginPage.enterCountry(country);
+            await loginPage.selectCountry(country);
+        }
+        [When("I click login button")]
+        public async Task WhenIClickLoginButton()
+        {
+            await  loginPage.clickLoginBtn();
+        }
+
+
     }
 }

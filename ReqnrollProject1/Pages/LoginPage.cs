@@ -1,11 +1,7 @@
 ﻿using Microsoft.Playwright;
+using NUnit.Framework;
 using ReqnrollProject1.Variable;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ReqnrollProject1.Pages
 {
@@ -21,30 +17,31 @@ namespace ReqnrollProject1.Pages
         private ILocator LoginBtn => _page.GetByText("Login");
         private ILocator RegisterBtn => _page.Locator("text=Register");
         private ILocator MobileRadioBtn => _page.Locator("xpath = (//*[text()='Mobile Number'])[1]");
-        private ILocator CountryCode => _page.Locator("xpath = //*(contains[text(),'+'])");
+        private ILocator CountryCode => _page.Locator("xpath = (//*[contains(text(),'+91')])[1]");
         private ILocator CountryCodeSearch => _page.GetByPlaceholder("Search");
-        private ILocator CountryPicker(string country) => _page.Locator($"text={country}");
+        private ILocator CountryPicker(string country) => _page.GetByText(country);
         private ILocator PhoneNumberField => _page.Locator("xpath = //*[contains(@data-testid,'user-mobileno-input-box')]");
         private ILocator PasswordField => _page.Locator("xpath = //*[contains(@data-testid,'password-input-box-cta')]");
         private ILocator LoginCtaBtn => _page.Locator("xpath = //*[contains(@data-testid,'login-cta')]");
         private ILocator ErrorMsg => _page.Locator("xpath = //*(contains[text(),'try again'])");
 
 
-        public async void clickLoginBtn()
+        public async Task clickLoginBtn()
         {
             await LoginBtn.ClickAsync();
         }
-        public async void clickMobileRegOption()
+        public async Task clickMobileRegOption()
         {
             await MobileRadioBtn.ClickAsync();
         }
 
-        public async void clickCountryCodeBtn()
+        public async Task clickCountryCodeBtn()
         {
             await CountryCode.ClickAsync();
         }
-        public async void enterCountry(string country)
+        public async Task enterCountry(string country)
         {
+            await CountryCodeSearch.ClearAsync();
             if (country == null) 
             {
                 await CountryCodeSearch.FillAsync("United Kingdom"); 
@@ -56,7 +53,7 @@ namespace ReqnrollProject1.Pages
             }
                 
         }
-        public async void selectCountry(string country)
+        public async Task selectCountry(string country)
         {
             if (country == null)
             {
@@ -69,14 +66,29 @@ namespace ReqnrollProject1.Pages
             }
             
         }
-        public async void enterPhoneNo()
+        public async Task enterPhoneNo()
         {
            await PhoneNumberField.ClearAsync();
-           await PhoneNumberField.FillAsync(_excelFile.phoneNumber());
+           string phone = _excelFile.GetPhoneNumber();
+           await PhoneNumberField.FillAsync(phone);
+        }
+        public async Task enterPassword()
+        {
+            await PasswordField.ClearAsync();
+            string password = _excelFile.GetPassword();
+            await PasswordField.FillAsync(password);
+        }
+
+        public async Task clickSubmitLogin()
+        {
+            await LoginCtaBtn.ClickAsync();
+        }
+        public async Task assertLoginError()
+        {
+            Assert.True(await ErrorMsg.IsVisibleAsync());
         }
 
 
-        
 
 
     }
