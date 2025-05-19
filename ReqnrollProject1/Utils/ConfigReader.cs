@@ -22,9 +22,14 @@ namespace ReqnrollProject1.Utils
             return Convert.ToInt64(data![key]!.Value<string>()!);
         }
 
-        public static string GetConfigValue(string key)
+        public static string GetConfigAppSettingValue(string key)
         {
-            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../Variable/AppSettings.json")) as JObject;
+            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../Resources/Configuration/AppSettings.json")) as JObject;
+            return data![key]!.Value<string>()!;
+        }
+        public static string GetConfigUrls(string key)
+        {
+            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../Resources/Configuration/Urls.json")) as JObject;
             return data![key]!.Value<string>()!;
         }
     }

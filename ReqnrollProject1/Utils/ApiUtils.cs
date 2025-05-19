@@ -9,7 +9,7 @@ namespace ReqnrollProject1.Utils
 {
     internal class ApiUtils
     {
-        private static readonly RestClient client = new(ConfigReader.GetConfigValue("baseRequestUrl"));
+        private static readonly RestClient client = new(ConfigReader.GetConfigAppSettingValue("baseRequestUrl"));
         public static RestResponse SendGetRequest(string resource)
         {
             //implement a simple get request

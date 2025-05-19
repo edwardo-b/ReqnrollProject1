@@ -72,7 +72,7 @@ namespace ReqnrollProject1.Hook
         [BeforeScenario ("@API")]
         public void BeforeAPIScenario()
         {
-            var client = new RestClient(ConfigReader.GetConfigValue("baseRequestUrl"));
+            var client = new RestClient(ConfigReader.GetConfigAppSettingValue("baseRequestUrl"));
             _objectContainer.RegisterInstanceAs(client);
         }
 
