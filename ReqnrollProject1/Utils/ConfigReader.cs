@@ -36,8 +36,10 @@ namespace ReqnrollProject1.Utils
 
         public static string GetConfigUrls(string key)
         {
-            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../Resources/Configuration/Urls.json")) as JObject;
-            return data![key]!.Value<string>()!;
+            var json = File.ReadAllText("../../../Resources/Configuration/Urls.json");
+            var data = JsonConvert.DeserializeObject<JObject>(json);
+            var token = data!.SelectToken(key.Replace(":", "."));
+            return token?.ToString() ?? throw new Exception($"Key '{key}' not found in Urls.json");
         }
     }
 }

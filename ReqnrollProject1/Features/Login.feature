@@ -17,3 +17,6 @@ Scenario: WRS Login Check
 	When I log in as manager on CMS Login page
 	Then WRS Home page is displayed
 
+
+
+

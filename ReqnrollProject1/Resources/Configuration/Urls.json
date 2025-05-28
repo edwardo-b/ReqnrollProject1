@@ -1,10 +1,9 @@
 {
-  "AppUrl": "https://www.spicejet.com/",
-  "baseRequestUrl": "https://petstore.swagger.io/v2/",
-  "webUIUrl": "https://the-internet.herokuapp.com/",
-  "FrontendUrl": "website.{0}.url",
-  "CmsUrl": "cms-sgp.domain",
-  "WrsUrl": "https://int01-backoffice-login.test.nonprod.sharpgaming.net/",
-  "WrsUrl1": "backoffice-login.domain"
-
+  "Urls": {
+    "AppUrl": "https://www.spicejet.com/",
+    "baseRequestUrl": "https://petstore.swagger.io/v2/",
+    "webUIUrl": "https://the-internet.herokuapp.com/",
+    "CmsUrl": "cms-sgp.domain",
+    "WrsUrl": "http://reporter-frontend-service-47731015.eu-west-2.elb.amazonaws.com/"
+  }
 }
