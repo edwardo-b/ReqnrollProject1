@@ -121,6 +121,38 @@ this.ScenarioInitialize(scenarioInfo);
             }
             await this.ScenarioCleanupAsync();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WRS Login Check")]
+        [NUnit.Framework.CategoryAttribute("UI")]
+        public async System.Threading.Tasks.Task WRSLoginCheck()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "UI"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("WRS Login Check", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 15
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 16
+ await testRunner.GivenAsync("I navigate to WRS", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 17
+ await testRunner.WhenAsync("I log in as manager on CMS Login page", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 18
+ await testRunner.ThenAsync("WRS Home page is displayed", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
     }
 }
 #pragma warning restore

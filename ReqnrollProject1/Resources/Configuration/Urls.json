@@ -3,5 +3,8 @@
   "baseRequestUrl": "https://petstore.swagger.io/v2/",
   "webUIUrl": "https://the-internet.herokuapp.com/",
   "FrontendUrl": "website.{0}.url",
-  "CmsUrl": "cms-sgp.domain"
+  "CmsUrl": "cms-sgp.domain",
+  "WrsUrl": "https://int01-backoffice-login.test.nonprod.sharpgaming.net/",
+  "WrsUrl1": "backoffice-login.domain"
+
 }

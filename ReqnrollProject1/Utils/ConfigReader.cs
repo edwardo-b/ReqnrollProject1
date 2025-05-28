@@ -24,9 +24,16 @@ namespace ReqnrollProject1.Utils
 
         public static string GetConfigAppSettingValue(string key)
         {
-            var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../Resources/Configuration/AppSettings.json")) as JObject;
-            return data![key]!.Value<string>()!;
+            var json = File.ReadAllText("../../../Resources/Configuration/AppSettings.json");
+            var data = JsonConvert.DeserializeObject<JObject>(json);
+
+            // Convert colon-separated key to JSONPath format, e.g., "browser:Browser" -> "browser.Browser"
+            var jsonPath = key.Replace(":", ".");
+
+            var token = data?.SelectToken(jsonPath);
+            return token?.ToString() ?? throw new Exception($"Key '{key}' not found in AppSettings.json");
         }
+
         public static string GetConfigUrls(string key)
         {
             var data = JsonConvert.DeserializeObject(File.ReadAllText("../../../Resources/Configuration/Urls.json")) as JObject;

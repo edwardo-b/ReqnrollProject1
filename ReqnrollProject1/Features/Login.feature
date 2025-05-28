@@ -11,4 +11,9 @@ Scenario: [Login with username]
 	Then I click on the login button
 	And I should see the home page
 
+@UI
+Scenario: WRS Login Check
+	Given I navigate to WRS
+	When I log in as manager on CMS Login page
+	Then WRS Home page is displayed
 

@@ -1,6 +1,7 @@
 using Microsoft.Playwright;
 using Reqnroll;
 using Reqnroll.BoDi;
+using ReqnrollProject1.Resources.Configuration;
 using ReqnrollProject1.Utils;
 using RestSharp;
 using System.Threading.Tasks;
@@ -33,41 +34,80 @@ namespace ReqnrollProject1.Hook
             //TODO: implement logic that has to run before executing each scenario
         }
 
-        [BeforeScenario("@UI",Order = 1)]
+        [BeforeScenario("@UI", Order = 1)]
         public async Task FirstBeforeScenario()
         {
+            var browserSetting = Configuration.GetBrowser;
+
+            if (string.IsNullOrWhiteSpace(browserSetting))
+                throw new InvalidOperationException("Browser configuration is missing. Please check your configuration file.");
+
+            var browserType = browserSetting.ToLower();
+
             var playwright = await Playwright.CreateAsync();
-            var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+            IBrowser browser;
+            IBrowserContext context;
+            IPage page;
+
+            switch (browserType)
             {
-                Headless = false,
-                SlowMo = 1000,
-            });
-            var context = await browser.NewContextAsync(new BrowserNewContextOptions
+                case "chrome":
+                case "edge":
+                    browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+                    {
+                        Headless = false,
+                        SlowMo = 1000
+                    });
+                    break;
+
+                case "firefox":
+                    browser = await playwright.Firefox.LaunchAsync(new BrowserTypeLaunchOptions
+                    {
+                        Headless = false,
+                        SlowMo = 1000
+                    });
+                    break;
+
+                case "webkit":
+                    browser = await playwright.Webkit.LaunchAsync(new BrowserTypeLaunchOptions
+                    {
+                        Headless = false,
+                        SlowMo = 1000
+                    });
+                    break;
+
+                default:
+                    throw new InvalidOperationException($"Unsupported browser: {browserType}");
+            }
+
+            context = await browser.NewContextAsync(new BrowserNewContextOptions
             {
                 ViewportSize = new ViewportSize { Width = 1920, Height = 1080 },
                 BypassCSP = true
             });
-            var page = await context.NewPageAsync();
 
-            _objectContainer.RegisterInstanceAs<IPage>(page);
-            _objectContainer.RegisterInstanceAs<IBrowser>(browser);
-            _objectContainer.RegisterInstanceAs<IPlaywright>(playwright);
-            _objectContainer.RegisterInstanceAs<IBrowserContext>(context);
+            page = await context.NewPageAsync();
 
+            // Register for DI
+            _objectContainer.RegisterInstanceAs(playwright);
+            _objectContainer.RegisterInstanceAs(browser);
+            _objectContainer.RegisterInstanceAs(context);
+            _objectContainer.RegisterInstanceAs(page);
         }
+
 
         [AfterScenario("@UI")]
         public async Task AfterScenario()
         {
-            //TODO: implement logic that has to run after executing each scenario
+            // Clean up Playwright browser and instance after each UI scenario
             var browser = _objectContainer.Resolve<IBrowser>();
             var playwright = _objectContainer.Resolve<IPlaywright>();
 
             await browser.CloseAsync();
-            playwright.Dispose(); // Ensure proper cleanup
+            playwright.Dispose(); // No await here, since Dispose() is not asynchronous
         }
 
-        
+
 
         [BeforeScenario ("@API")]
         public void BeforeAPIScenario()

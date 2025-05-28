@@ -26,7 +26,7 @@ namespace ReqnrollProject1.Resources.Configuration
         private static string betfredUaeCompany;
         public static string CompanyId => CompanyInfo;
         public static string FranchiseId => FrachiseInfo;
-        public static string GetBrowser => ConfigReader.GetConfigAppSettingValue("browser:Browser");
+        public static string GetBrowser => ConfigReader.GetConfigAppSettingValue("browser:Browser") ?? "chrome";
         public static string Team => ConfigReader.GetConfigAppSettingValue("env:Team").ToLower();
         private static string BusinessUnit => ConfigReader.GetConfigAppSettingValue("env:BusinessUnit").ToLower();
         public static string Company
