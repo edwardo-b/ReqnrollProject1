@@ -1,7 +1,10 @@
 using Microsoft.Playwright;
+using NUnit.Framework; // for Assert
+using Reqnroll;
 using Reqnroll.BoDi;
 using ReqnrollProject1.Pages;
 using ReqnrollProject1.Variable;
+using System;
 using System.Threading.Tasks;
 
 namespace ReqnrollProject1.StepDefinitions
@@ -9,49 +12,40 @@ namespace ReqnrollProject1.StepDefinitions
     [Binding]
     public sealed class CalculatorStepDefinitions
     {
-        private readonly ExcelFile _excelFile;
-        private readonly LoginPage _loginPage;
-        private readonly IObjectContainer _objectContainer;
-        public CalculatorStepDefinitions(IObjectContainer objectContainer) 
-        { _excelFile = new ExcelFile();
-          _objectContainer = objectContainer;
-          _loginPage = objectContainer.Resolve<LoginPage>();
-        
+
+        private int _number1;
+        private int _number2;
+        private int _result;
+
+        public CalculatorStepDefinitions()
+        {
         }
-        // For additional details on Reqnroll step definitions see https://go.reqnroll.net/doc-stepdef
 
         [Given("the first number is {int}")]
-        public async Task GivenTheFirstNumberIs(int number1)
+        public void GivenTheFirstNumberIs(int number)
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.reqnroll.net/doc-sharingdata
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-          Console.WriteLine($"{number1}");
+            _number1 = number;
+            Console.WriteLine($"First Number: {_number1}");
         }
 
         [Given("the second number is {int}")]
-        public void GivenTheSecondNumberIs(int number2)
+        public void GivenTheSecondNumberIs(int number)
         {
-            //TODO: implement arrange (precondition) logic
-
-            Console.WriteLine($"{number2}");
+            _number2 = number;
+            Console.WriteLine($"Second Number: {_number2}");
         }
 
         [When("the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded(int number1, int number2)
+        public void WhenTheTwoNumbersAreAdded()
         {
-            //TODO: implement act (action) logic
-
-            var ans = number1 + number2;
+            _result = _number1 + _number2;
+            Console.WriteLine($"Sum: {_result}");
         }
 
         [Then("the result should be {int}")]
-        public void ThenTheResultShouldBe(int result, int ans)
+        public void ThenTheResultShouldBe(int expected)
         {
-            //TODO: implement assert (verification) logic
-             Assertions.Equals(result, ans);
+            Assert.AreEqual(expected, _result);
         }
     }
 }
