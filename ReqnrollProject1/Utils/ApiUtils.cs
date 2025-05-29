@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Reqnroll.BoDi;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,31 +10,36 @@ namespace ReqnrollProject1.Utils
 {
     internal class ApiUtils
     {
-        private static readonly RestClient client = new(ConfigReader.GetConfigAppSettingValue("baseRequestUrl"));
-        public static RestResponse SendGetRequest(string resource)
+        //private static readonly RestClient client = new(ConfigReader.GetConfigAppSettingValue("baseRequestUrl"));
+        private readonly RestClient client;
+
+        public ApiUtils(IObjectContainer container)
+        {
+            client = container.Resolve<RestClient>();
+        }
+        public  RestResponse SendGetRequest(string resource)
         {
             //implement a simple get request
-            return client.Execute(new RestRequest(resource, Method.Get)
-            { RequestFormat = DataFormat.None });
-
+            var request = new RestRequest(resource,Method.Get);
+            return client.Execute(request);
             //return null;
         }
 
-        public static RestResponse SendPostRequest(string resource, Object body)
+        public  RestResponse SendPostRequest(string resource, Object body)
         {
 
             return client.Execute(new RestRequest(resource, Method.Post)
             { RequestFormat = DataFormat.Json }
                 .AddBody(body));
         }
-        public static RestResponse SendPutRequest(string resource, Object body)
+        public  RestResponse SendPutRequest(string resource, Object body)
         {
 
             return client.Execute(new RestRequest(resource, Method.Put)
             { RequestFormat = DataFormat.Json }
                 .AddBody(body));
         }
-        public static RestResponse SendDeleteRequest(string resource)
+        public  RestResponse SendDeleteRequest(string resource)
         {
 
             return client.Execute(new RestRequest(resource, Method.Delete)

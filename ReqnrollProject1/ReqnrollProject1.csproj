@@ -1,27 +1,42 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<IsPackable>false</IsPackable>
+		<VSTestLogger>trx</VSTestLogger>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<!-- Added -->
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Bytescout.Spreadsheet" Version="4.7.1.2054" />
-    <PackageReference Include="CopilotDev.NET.Api" Version="1.1.0" />
-    <PackageReference Include="EnumExtensions.System.Text.Json" Version="1.2.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
-    <PackageReference Include="Microsoft.Playwright" Version="1.52.0" />
-    <PackageReference Include="NPOI" Version="2.7.3" />
-    <PackageReference Include="Reqnroll.NUnit" Version="2.2.1" />
-    <PackageReference Include="nunit" Version="3.14.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
-    <PackageReference Include="RestSharp" Version="112.1.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Bytescout.Spreadsheet" Version="4.7.1.2054" />
+		<PackageReference Include="CopilotDev.NET.Api" Version="1.1.0" />
+		<PackageReference Include="EnumExtensions.System.Text.Json" Version="1.2.0" />
+		<PackageReference Include="FluentAssertions" Version="8.3.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+		<PackageReference Include="Microsoft.Playwright" Version="1.52.0" />
+		<PackageReference Include="NPOI" Version="2.7.3" />
+		<PackageReference Include="Reqnroll" Version="2.4.1" />
+		<PackageReference Include="Reqnroll.NUnit" Version="2.4.1" />
+		<PackageReference Include="Reqnroll.Tools.MsBuild.Generation" Version="2.4.1" />
+		<PackageReference Include="nunit" Version="3.14.0" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+		<PackageReference Include="RestSharp" Version="112.1.0" />
+		<PackageReference Include="NUnit" Version="3.14.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Drivers\" />
-    <Folder Include="Support\" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Update="**\*.feature">
+			<Generator>SpecFlowSingleFileGenerator</Generator>
+			<LastGenOutput>FeatureSteps.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Drivers\" />
+		<Folder Include="Support\" />
+	</ItemGroup>
 
 </Project>

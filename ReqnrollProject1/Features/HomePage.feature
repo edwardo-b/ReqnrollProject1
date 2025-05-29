@@ -6,14 +6,20 @@ A short summary of the feature
 Scenario: WRS Homepage
   Given I navigate to WRS
   Then WRS Home page is displayed
-  When I click on the Liabilities Report
+  When I click home button
+  And I click on the Liabilities Report
   Then the Liabilities page is opened
-  When I click on the Revenue Report
+  When I click home button
+  And I click on the Revenue Report
   Then the Revenue page is opened
-  When I click on Significant Events
+  When I click home button
+  And I click on Significant Events
   Then the Significant Events page is opened
-  When I click on Future Events
+  When I click home button
+  And I click on Future Events
   Then the Future Events page is opened
+  When I click home button
+  And WRS Home page is displayed
 
 @UI
 Scenario: Open Liabilities Report

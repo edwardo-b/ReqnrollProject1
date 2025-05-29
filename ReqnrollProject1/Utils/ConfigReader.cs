@@ -38,7 +38,11 @@ namespace ReqnrollProject1.Utils
         {
             var json = File.ReadAllText("../../../Resources/Configuration/Urls.json");
             var data = JsonConvert.DeserializeObject<JObject>(json);
-            var token = data!.SelectToken(key.Replace(":", "."));
+
+            // Support nested keys using ":" (e.g., "Urls:AppUrl")
+            var jsonPath = key.Replace(":", ".");
+
+            var token = data?.SelectToken(jsonPath);
             return token?.ToString() ?? throw new Exception($"Key '{key}' not found in Urls.json");
         }
     }

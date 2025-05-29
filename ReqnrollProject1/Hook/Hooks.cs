@@ -1,4 +1,5 @@
 using Microsoft.Playwright;
+using NPOI.Util;
 using Reqnroll;
 using Reqnroll.BoDi;
 using ReqnrollProject1.Resources.Configuration;
@@ -97,23 +98,41 @@ namespace ReqnrollProject1.Hook
 
 
         [AfterScenario("@UI")]
-        public async Task AfterScenario()
+        public async Task AfterUiScenarioAsync()
         {
-            // Clean up Playwright browser and instance after each UI scenario
+            var page = _objectContainer.Resolve<IPage>();
             var browser = _objectContainer.Resolve<IBrowser>();
             var playwright = _objectContainer.Resolve<IPlaywright>();
+            // Take screenshot if scenario failed
+            if (_scenarioContext.TestError != null)
+            {
+                var screenshotDir = Path.Combine(Directory.GetCurrentDirectory(), "Screenshots");
+                Directory.CreateDirectory(screenshotDir);
 
+                var fileName = $"{_scenarioContext.ScenarioInfo.Title}-{DateTime.Now:yyyyMMddHHmmss}.png";
+                var screenshotPath = Path.Combine(screenshotDir, fileName);
+
+                await page.ScreenshotAsync(new() { Path = screenshotPath });
+                Console.WriteLine($"Screenshot taken: {screenshotPath}");
+            }
+
+            // Clean up Playwright browser and instance
             await browser.CloseAsync();
-            playwright.Dispose(); // No await here, since Dispose() is not asynchronous
+            playwright.Dispose(); // Dispose is sync
         }
 
-
-
-        [BeforeScenario ("@API")]
+        [BeforeScenario("@API")]
         public void BeforeAPIScenario()
         {
-            var client = new RestClient(ConfigReader.GetConfigAppSettingValue("baseRequestUrl"));
+            var baseUrl = ConfigReader.GetConfigUrls("Urls:baseRequestUrl");
+            var client = new RestClient(baseUrl);
             _objectContainer.RegisterInstanceAs(client);
+
+            var apiUtils = new ApiUtils(_objectContainer);
+            _objectContainer.RegisterInstanceAs(apiUtils);
+
+            var petStoreApi = new PetStoreApiUtils(apiUtils);
+            _objectContainer.RegisterInstanceAs(petStoreApi);
         }
 
         [AfterScenario("@API")]
@@ -121,10 +140,10 @@ namespace ReqnrollProject1.Hook
         {
             if (_scenarioContext.TryGetValue("deleteResource", out var resourceObj) && resourceObj is string resource)
             {
-                ApiUtils.SendDeleteRequest(resource);
+                var apiUtils = _objectContainer.Resolve<ApiUtils>();
+                apiUtils.SendDeleteRequest(resource);
             }
         }
-
 
     }
 }

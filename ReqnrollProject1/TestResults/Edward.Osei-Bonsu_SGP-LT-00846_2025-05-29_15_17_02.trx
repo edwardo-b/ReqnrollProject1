@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8ac6734a-2a10-4dd0-b6a3-ea2e18e4e79b" name="Edward.Osei-Bonsu@SGP-LT-00846 2025-05-29 15:17:02" runUser="SHARPGAMING\Edward.Osei-Bonsu" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-05-29T15:17:02.4694639+01:00" queuing="2025-05-29T15:17:02.4694641+01:00" start="2025-05-29T15:17:00.4001368+01:00" finish="2025-05-29T15:18:12.1434909+01:00" />
+  <TestSettings name="default" id="127427d2-9a0c-4296-85f9-aa14f9c6fb6d">
+    <Deployment runDeploymentRoot="Edward.Osei-Bonsu_SGP-LT-00846_2025-05-29_15_17_02" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="96e01e78-2549-444d-b7f3-ac1ec4372d8b" testId="a2bb6cfe-7e1d-ba64-c768-acbc92b05dd0" testName="OpenFutureEventsPage" computerName="SGP-LT-00846" duration="00:00:12.2611500" startTime="2025-05-29T15:17:01.8663071+01:00" endTime="2025-05-29T15:17:14.1274599+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96e01e78-2549-444d-b7f3-ac1ec4372d8b">
+      <Output>
+        <StdOut>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.5s)&#xD;
+When I click on Future Events&#xD;
+-&gt; done: HomePageStepDefinitions.WhenIClickOnFutureEvents() (6.6s)&#xD;
+Then the Future Events page is opened&#xD;
+-&gt; done: HomePageStepDefinitions.ThenTheFutureEventsPageIsOpened() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="299a4ec9-e408-47c2-9226-500211d05aac" testId="7435b7de-2e9e-6373-eab6-7db7f5250a23" testName="CreateAndDeleteAPet" computerName="SGP-LT-00846" duration="00:00:00.8713840" startTime="2025-05-29T15:18:11.2010037+01:00" endTime="2025-05-29T15:18:12.0723871+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="299a4ec9-e408-47c2-9226-500211d05aac">
+      <Output>
+        <StdOut>When I create a pet using the API&#xD;
+-&gt; done: PetCreateDeleteAPIStepDefinitions.WhenICreateAPetUsingTheAPI() (0.9s)&#xD;
+Then the pet should be created successfully&#xD;
+-&gt; done: PetCreateDeleteAPIStepDefinitions.ThenThePetShouldBeCreatedSuccessfully() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="dd18a938-3071-4dc7-a8d1-1e1312a45308" testId="b44d3602-622b-acfc-2ad3-a0ad5f1b005b" testName="OpenSignificantEventsPage" computerName="SGP-LT-00846" duration="00:00:10.5326240" startTime="2025-05-29T15:17:39.5171965+01:00" endTime="2025-05-29T15:17:50.0498231+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dd18a938-3071-4dc7-a8d1-1e1312a45308">
+      <Output>
+        <StdOut>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.1s)&#xD;
+When I click on Significant Events&#xD;
+-&gt; done: HomePageStepDefinitions.WhenIClickOnSignificantEvents() (5.6s)&#xD;
+Then the Significant Events page is opened&#xD;
+-&gt; done: HomePageStepDefinitions.ThenTheSignificantEventsPageIsOpened() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8047e01f-d18c-480e-a43c-960415d7f97e" testId="26431efe-2f9a-6117-adc2-09fef550804a" testName="LoginWithUsername" computerName="SGP-LT-00846" duration="00:00:02.4047710" startTime="2025-05-29T15:18:00.5099473+01:00" endTime="2025-05-29T15:18:02.9147186+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8047e01f-d18c-480e-a43c-960415d7f97e">
+      <Output>
+        <StdOut>Given I launch the application URL&#xD;
+-&gt; error: Key 'AppUrl' not found in Urls.json (0.0s)&#xD;
+When I click login button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I select mobile option and choose region or "United Kingdom" code&#xD;
+-&gt; skipped because of previous errors&#xD;
+And enter the phone number and password&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then I click on the login button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I should see the home page&#xD;
+-&gt; skipped because of previous errors&#xD;
+Screenshot taken: C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\Screenshots\[Login with username]-20250529151802.png</StdOut>
+        <ErrorInfo>
+          <Message>System.Exception : Key 'AppUrl' not found in Urls.json</Message>
+          <StackTrace>   at ReqnrollProject1.Utils.ConfigReader.GetConfigUrls(String key) in C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\Utils\ConfigReader.cs:line 46&#xD;
+   at ReqnrollProject1.StepDefinitions.LoginStepDefinitions.GivenILaunchTheApplicationURL() in C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\StepDefinitions\LoginStepDefinitions.cs:line 33&#xD;
+   at Reqnroll.Bindings.AsyncMethodHelper.ConvertTaskOfT(Task task, Boolean getValue)&#xD;
+   at Reqnroll.Bindings.BindingDelegateInvoker.InvokeDelegateAsync(Delegate bindingDelegate, Object[] invokeArgs, ExecutionContextHolder executionContext)&#xD;
+   at Reqnroll.Bindings.BindingInvoker.InvokeBindingAsync(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, DurationHolder durationHolder)&#xD;
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepMatchAsync(BindingMatch match, Object[] arguments, DurationHolder durationHolder)&#xD;
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepAsync(IContextManager contextManager, StepInstance stepInstance)&#xD;
+   at Reqnroll.Infrastructure.TestExecutionEngine.OnAfterLastStepAsync()&#xD;
+   at Reqnroll.TestRunner.CollectScenarioErrorsAsync()&#xD;
+   at ReqnrollProject1.Features.LoginFeature.ScenarioCleanupAsync()&#xD;
+   at ReqnrollProject1.Features.LoginFeature.LoginWithUsername() in C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\Features\Login.feature:line 12&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()&#xD;
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ff103199-4ca7-4366-b47e-692bd8c20338" testId="777d5611-125b-86da-5155-31afb73f2b36" testName="WRSLoginCheck" computerName="SGP-LT-00846" duration="00:00:08.2856740" startTime="2025-05-29T15:18:02.9147623+01:00" endTime="2025-05-29T15:18:11.2004377+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ff103199-4ca7-4366-b47e-692bd8c20338">
+      <Output>
+        <StdOut>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (2.5s)&#xD;
+When I log in as manager on Wrs Login page&#xD;
+-&gt; done: WrsLoginStepDefinitions.WhenILogInAsManagerOnWrsLoginPage() (0.0s)&#xD;
+Then WRS Home page is displayed&#xD;
+-&gt; done: WrsLoginStepDefinitions.ThenWRSHomePageIsDisplayed() (3.9s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2ecb28cc-0600-4d5a-afa8-72ac41602c99" testId="89ae69a5-3edd-d6ab-7421-a7eee1d808be" testName="OpenLiabilitiesReport" computerName="SGP-LT-00846" duration="00:00:12.5080030" startTime="2025-05-29T15:17:14.1275157+01:00" endTime="2025-05-29T15:17:26.6355222+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2ecb28cc-0600-4d5a-afa8-72ac41602c99">
+      <Output>
+        <StdOut>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.9s)&#xD;
+When I click on the Liabilities Report&#xD;
+-&gt; done: HomePageStepDefinitions.WhenIClickOnTheLiabilitiesReport() (6.7s)&#xD;
+Then the Liabilities page is opened&#xD;
+-&gt; done: HomePageStepDefinitions.ThenTheLiabilitiesPageIsOpened() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d1597a40-52d4-4467-a487-e7419f2a6df9" testId="734d80e6-ab40-b6a9-9a7a-a1ebbb40be09" testName="WRSHomepage" computerName="SGP-LT-00846" duration="00:00:10.4593460" startTime="2025-05-29T15:17:50.0498706+01:00" endTime="2025-05-29T15:18:00.5092194+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d1597a40-52d4-4467-a487-e7419f2a6df9">
+      <Output>
+        <StdOut>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.3s)&#xD;
+Then WRS Home page is displayed&#xD;
+-&gt; error: Locator expected to be visible &#xD;
+Call log:&#xD;
+  - LocatorAssertions.ToBeVisibleAsync with timeout 5000ms&#xD;
+  - waiting for GetByText("Welcome to Reporter") (5.0s)&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I click on the Liabilities Report&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the Liabilities page is opened&#xD;
+-&gt; skipped because of previous errors&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I click on the Revenue Report&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the Revenue page is opened&#xD;
+-&gt; skipped because of previous errors&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I click on Significant Events&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the Significant Events page is opened&#xD;
+-&gt; skipped because of previous errors&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I click on Future Events&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the Future Events page is opened&#xD;
+-&gt; skipped because of previous errors&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And WRS Home page is displayed&#xD;
+-&gt; skipped because of previous errors&#xD;
+Screenshot taken: C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\Screenshots\WRS Homepage-20250529151759.png</StdOut>
+        <ErrorInfo>
+          <Message>Microsoft.Playwright.PlaywrightException : Locator expected to be visible &#xD;
+Call log:&#xD;
+  - LocatorAssertions.ToBeVisibleAsync with timeout 5000ms&#xD;
+  - waiting for GetByText("Welcome to Reporter")</Message>
+          <StackTrace>   at Microsoft.Playwright.Core.AssertionsBase.ExpectImplAsync(String expression, FrameExpectOptions expectOptions, Object expected, String message) in /_/src/Playwright/Core/AssertionsBase.cs:line 85&#xD;
+   at Microsoft.Playwright.Core.AssertionsBase.ExpectImplAsync(String expression, ExpectedTextValue[] expectedText, Object expected, String message, FrameExpectOptions options) in /_/src/Playwright/Core/AssertionsBase.cs:line 65&#xD;
+   at ReqnrollProject1.Pages.HomePage.isHomePageDisplayed() in C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\Pages\HomePage.cs:line 50&#xD;
+   at ReqnrollProject1.StepDefinitions.WrsLoginStepDefinitions.ThenWRSHomePageIsDisplayed() in C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\StepDefinitions\WrsLoginStepDefinitions.cs:line 53&#xD;
+   at Reqnroll.Bindings.AsyncMethodHelper.ConvertTaskOfT(Task task, Boolean getValue)&#xD;
+   at Reqnroll.Bindings.BindingDelegateInvoker.InvokeDelegateAsync(Delegate bindingDelegate, Object[] invokeArgs, ExecutionContextHolder executionContext)&#xD;
+   at Reqnroll.Bindings.BindingInvoker.InvokeBindingAsync(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, DurationHolder durationHolder)&#xD;
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepMatchAsync(BindingMatch match, Object[] arguments, DurationHolder durationHolder)&#xD;
+   at Reqnroll.Infrastructure.TestExecutionEngine.ExecuteStepAsync(IContextManager contextManager, StepInstance stepInstance)&#xD;
+   at Reqnroll.Infrastructure.TestExecutionEngine.OnAfterLastStepAsync()&#xD;
+   at Reqnroll.TestRunner.CollectScenarioErrorsAsync()&#xD;
+   at ReqnrollProject1.Features.HomePageFeature.ScenarioCleanupAsync()&#xD;
+   at ReqnrollProject1.Features.HomePageFeature.WRSHomepage() in C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\Features\HomePage.feature:line 22&#xD;
+   at NUnit.Framework.Internal.TaskAwaitAdapter.GenericAdapter`1.BlockUntilCompleted()&#xD;
+   at NUnit.Framework.Internal.MessagePumpStrategy.NoMessagePumpStrategy.WaitForCompletion(AwaitAdapter awaiter)&#xD;
+   at NUnit.Framework.Internal.AsyncToSyncAdapter.Await(Func`1 invoke)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.RunTestMethod(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.TestMethodCommand.Execute(TestExecutionContext context)&#xD;
+   at NUnit.Framework.Internal.Commands.BeforeAndAfterTestCommand.&lt;&gt;c__DisplayClass1_0.&lt;Execute&gt;b__0()&#xD;
+   at NUnit.Framework.Internal.Commands.DelegatingTestCommand.RunTestMethodInThreadAbortSafeZone(TestExecutionContext context, Action action)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="72038537-49f2-4f77-ad0b-4cbc770c4c84" testId="ba43eb7d-47e8-3419-9f66-cb8476282449" testName="OpenRevenueReport" computerName="SGP-LT-00846" duration="00:00:12.8815770" startTime="2025-05-29T15:17:26.6355682+01:00" endTime="2025-05-29T15:17:39.5171489+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="72038537-49f2-4f77-ad0b-4cbc770c4c84">
+      <Output>
+        <StdOut>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.7s)&#xD;
+When I click on the Revenue Report&#xD;
+-&gt; done: HomePageStepDefinitions.WhenIClickOnTheRevenueReport() (7.2s)&#xD;
+Then the Revenue page is opened&#xD;
+-&gt; done: HomePageStepDefinitions.ThenTheRevenuePageIsOpened() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b0001c89-f3a3-480c-9e30-f503fbe5a6ef" testId="b36c4215-511e-34de-13c6-2f3135f30da8" testName="AddTwoNumbers" computerName="SGP-LT-00846" duration="00:00:00.0617660" startTime="2025-05-29T15:17:01.8015361+01:00" endTime="2025-05-29T15:17:01.8632489+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0001c89-f3a3-480c-9e30-f503fbe5a6ef">
+      <Output>
+        <StdOut>Given the first number is 50&#xD;
+-&gt; error: Exception has been thrown by the target of an invocation. (0.0s)&#xD;
+And the second number is 70&#xD;
+-&gt; skipped because of previous errors&#xD;
+When the two numbers are added&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the result should be 120&#xD;
+-&gt; skipped because of previous errors</StdOut>
+        <ErrorInfo>
+          <Message>Reqnroll.BoDi.ObjectContainerException : Interface cannot be resolved: Microsoft.Playwright.IPage (resolution path: ReqnrollProject1.Pages.LoginPage)</Message>
+          <StackTrace>   at Reqnroll.BoDi.ObjectContainer.TypeRegistration.&lt;&gt;c__DisplayClass3_0.&lt;ResolvePerContext&gt;b__1()&#xD;
+   at Reqnroll.BoDi.ObjectContainer.RegistrationWithStrategy.ExecuteWithLock(Object lockObject, Func`1 getter, Func`1 factory, ResolutionList resolutionPath, TimeSpan timeout)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.TypeRegistration.ResolvePerContext(ObjectContainer container, RegistrationKey keyToResolve, ResolutionList resolutionPath)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.RegistrationWithStrategy.Resolve(ObjectContainer container, RegistrationKey keyToResolve, ResolutionList resolutionPath)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.ResolveObject(RegistrationKey keyToResolve, ResolutionList resolutionPath)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.Resolve(Type typeToResolve, ResolutionList resolutionPath, String name)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.&lt;&gt;c__DisplayClass66_0.&lt;ResolveArguments&gt;b__0(ParameterInfo p)&#xD;
+   at System.Linq.Enumerable.SelectArrayIterator`2.Fill(ReadOnlySpan`1 source, Span`1 destination, Func`2 func)&#xD;
+   at System.Linq.Enumerable.SelectArrayIterator`2.ToArray()&#xD;
+   at Reqnroll.BoDi.ObjectContainer.ResolveArguments(IEnumerable`1 parameters, RegistrationKey keyToResolve, ResolutionList resolutionPath)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.CreateObject(Type type, ResolutionList resolutionPath, RegistrationKey keyToResolve)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.TypeRegistration.&lt;&gt;c__DisplayClass3_0.&lt;ResolvePerContext&gt;b__1()&#xD;
+   at Reqnroll.BoDi.ObjectContainer.RegistrationWithStrategy.ExecuteWithLock(Object lockObject, Func`1 getter, Func`1 factory, ResolutionList resolutionPath, TimeSpan timeout)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.TypeRegistration.ResolvePerContext(ObjectContainer container, RegistrationKey keyToResolve, ResolutionList resolutionPath)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.RegistrationWithStrategy.Resolve(ObjectContainer container, RegistrationKey keyToResolve, ResolutionList resolutionPath)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.ResolveObject(RegistrationKey keyToResolve, ResolutionList resolutionPath)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.Resolve(Type typeToResolve, ResolutionList resolutionPath, String name)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.Resolve(Type typeToResolve, String name)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.Resolve[T](String name)&#xD;
+   at Reqnroll.BoDi.ObjectContainer.Resolve[T]()&#xD;
+   at ReqnrollProject1.StepDefinitions.CalculatorStepDefinitions..ctor(IObjectContainer objectContainer) in C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\StepDefinitions\CalculatorStepDefinitions.cs:line 16&#xD;
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)&#xD;
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="WRSLoginCheck" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="777d5611-125b-86da-5155-31afb73f2b36">
+      <Execution id="ff103199-4ca7-4366-b47e-692bd8c20338" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.LoginFeature" name="WRSLoginCheck" />
+    </UnitTest>
+    <UnitTest name="CreateAndDeleteAPet" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="7435b7de-2e9e-6373-eab6-7db7f5250a23">
+      <Execution id="299a4ec9-e408-47c2-9226-500211d05aac" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.PetCreateDeleteAPIFeature" name="CreateAndDeleteAPet" />
+    </UnitTest>
+    <UnitTest name="OpenFutureEventsPage" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="a2bb6cfe-7e1d-ba64-c768-acbc92b05dd0">
+      <Execution id="96e01e78-2549-444d-b7f3-ac1ec4372d8b" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.HomePageFeature" name="OpenFutureEventsPage" />
+    </UnitTest>
+    <UnitTest name="OpenRevenueReport" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="ba43eb7d-47e8-3419-9f66-cb8476282449">
+      <Execution id="72038537-49f2-4f77-ad0b-4cbc770c4c84" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.HomePageFeature" name="OpenRevenueReport" />
+    </UnitTest>
+    <UnitTest name="AddTwoNumbers" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="b36c4215-511e-34de-13c6-2f3135f30da8">
+      <Execution id="b0001c89-f3a3-480c-9e30-f503fbe5a6ef" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.CalculatorFeature" name="AddTwoNumbers" />
+    </UnitTest>
+    <UnitTest name="OpenSignificantEventsPage" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="b44d3602-622b-acfc-2ad3-a0ad5f1b005b">
+      <Execution id="dd18a938-3071-4dc7-a8d1-1e1312a45308" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.HomePageFeature" name="OpenSignificantEventsPage" />
+    </UnitTest>
+    <UnitTest name="OpenLiabilitiesReport" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="89ae69a5-3edd-d6ab-7421-a7eee1d808be">
+      <Execution id="2ecb28cc-0600-4d5a-afa8-72ac41602c99" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.HomePageFeature" name="OpenLiabilitiesReport" />
+    </UnitTest>
+    <UnitTest name="LoginWithUsername" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="26431efe-2f9a-6117-adc2-09fef550804a">
+      <Execution id="8047e01f-d18c-480e-a43c-960415d7f97e" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.LoginFeature" name="LoginWithUsername" />
+    </UnitTest>
+    <UnitTest name="WRSHomepage" storage="c:\users\edward.osei-bonsu\edwardsalx\myautomation\reqnrollproject1\bin\debug\net8.0\reqnrollproject1.dll" id="734d80e6-ab40-b6a9-9a7a-a1ebbb40be09">
+      <Execution id="d1597a40-52d4-4467-a487-e7419f2a6df9" />
+      <TestMethod codeBase="C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReqnrollProject1.Features.HomePageFeature" name="WRSHomepage" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="a2bb6cfe-7e1d-ba64-c768-acbc92b05dd0" executionId="96e01e78-2549-444d-b7f3-ac1ec4372d8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7435b7de-2e9e-6373-eab6-7db7f5250a23" executionId="299a4ec9-e408-47c2-9226-500211d05aac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b44d3602-622b-acfc-2ad3-a0ad5f1b005b" executionId="dd18a938-3071-4dc7-a8d1-1e1312a45308" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26431efe-2f9a-6117-adc2-09fef550804a" executionId="8047e01f-d18c-480e-a43c-960415d7f97e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="777d5611-125b-86da-5155-31afb73f2b36" executionId="ff103199-4ca7-4366-b47e-692bd8c20338" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="89ae69a5-3edd-d6ab-7421-a7eee1d808be" executionId="2ecb28cc-0600-4d5a-afa8-72ac41602c99" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="734d80e6-ab40-b6a9-9a7a-a1ebbb40be09" executionId="d1597a40-52d4-4467-a487-e7419f2a6df9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ba43eb7d-47e8-3419-9f66-cb8476282449" executionId="72038537-49f2-4f77-ad0b-4cbc770c4c84" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b36c4215-511e-34de-13c6-2f3135f30da8" executionId="b0001c89-f3a3-480c-9e30-f503fbe5a6ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" passed="6" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 4.5.0.0: Test execution started&#xD;
+Running all tests in C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\ReqnrollProject1.dll&#xD;
+   NUnit3TestExecutor discovered 9 of 9 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+NUnit Adapter 4.5.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:17:01.8774065+01:00">
+        <Text>Given the first number is 50&#xD;
+-&gt; error: Exception has been thrown by the target of an invocation. (0.0s)&#xD;
+And the second number is 70&#xD;
+-&gt; skipped because of previous errors&#xD;
+When the two numbers are added&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the result should be 120&#xD;
+-&gt; skipped because of previous errors&#xD;
+</Text>
+      </RunInfo>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:17:14.1295956+01:00">
+        <Text>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.5s)&#xD;
+When I click on Future Events&#xD;
+-&gt; done: HomePageStepDefinitions.WhenIClickOnFutureEvents() (6.6s)&#xD;
+Then the Future Events page is opened&#xD;
+-&gt; done: HomePageStepDefinitions.ThenTheFutureEventsPageIsOpened() (0.0s)&#xD;
+</Text>
+      </RunInfo>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:17:26.6365103+01:00">
+        <Text>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.9s)&#xD;
+When I click on the Liabilities Report&#xD;
+-&gt; done: HomePageStepDefinitions.WhenIClickOnTheLiabilitiesReport() (6.7s)&#xD;
+Then the Liabilities page is opened&#xD;
+-&gt; done: HomePageStepDefinitions.ThenTheLiabilitiesPageIsOpened() (0.0s)&#xD;
+</Text>
+      </RunInfo>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:17:39.5187368+01:00">
+        <Text>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.7s)&#xD;
+When I click on the Revenue Report&#xD;
+-&gt; done: HomePageStepDefinitions.WhenIClickOnTheRevenueReport() (7.2s)&#xD;
+Then the Revenue page is opened&#xD;
+-&gt; done: HomePageStepDefinitions.ThenTheRevenuePageIsOpened() (0.0s)&#xD;
+</Text>
+      </RunInfo>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:17:50.0513855+01:00">
+        <Text>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.1s)&#xD;
+When I click on Significant Events&#xD;
+-&gt; done: HomePageStepDefinitions.WhenIClickOnSignificantEvents() (5.6s)&#xD;
+Then the Significant Events page is opened&#xD;
+-&gt; done: HomePageStepDefinitions.ThenTheSignificantEventsPageIsOpened() (0.0s)&#xD;
+</Text>
+      </RunInfo>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:18:00.5113308+01:00">
+        <Text>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (3.3s)&#xD;
+Then WRS Home page is displayed&#xD;
+-&gt; error: Locator expected to be visible &#xD;
+Call log:&#xD;
+  - LocatorAssertions.ToBeVisibleAsync with timeout 5000ms&#xD;
+  - waiting for GetByText("Welcome to Reporter") (5.0s)&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I click on the Liabilities Report&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the Liabilities page is opened&#xD;
+-&gt; skipped because of previous errors&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I click on the Revenue Report&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the Revenue page is opened&#xD;
+-&gt; skipped because of previous errors&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I click on Significant Events&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the Significant Events page is opened&#xD;
+-&gt; skipped because of previous errors&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I click on Future Events&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then the Future Events page is opened&#xD;
+-&gt; skipped because of previous errors&#xD;
+When I click home button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And WRS Home page is displayed&#xD;
+-&gt; skipped because of previous errors&#xD;
+Screenshot taken: C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\Screenshots\WRS Homepage-20250529151759.png&#xD;
+</Text>
+      </RunInfo>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:18:02.9158787+01:00">
+        <Text>Given I launch the application URL&#xD;
+-&gt; error: Key 'AppUrl' not found in Urls.json (0.0s)&#xD;
+When I click login button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I select mobile option and choose region or "United Kingdom" code&#xD;
+-&gt; skipped because of previous errors&#xD;
+And enter the phone number and password&#xD;
+-&gt; skipped because of previous errors&#xD;
+Then I click on the login button&#xD;
+-&gt; skipped because of previous errors&#xD;
+And I should see the home page&#xD;
+-&gt; skipped because of previous errors&#xD;
+Screenshot taken: C:\Users\Edward.Osei-Bonsu\EdwardsALX\MyAutomation\ReqnrollProject1\bin\Debug\net8.0\Screenshots\[Login with username]-20250529151802.png&#xD;
+</Text>
+      </RunInfo>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:18:11.2014901+01:00">
+        <Text>Given I navigate to WRS&#xD;
+-&gt; done: WrsLoginStepDefinitions.GivenINavigateToWRS() (2.5s)&#xD;
+When I log in as manager on Wrs Login page&#xD;
+-&gt; done: WrsLoginStepDefinitions.WhenILogInAsManagerOnWrsLoginPage() (0.0s)&#xD;
+Then WRS Home page is displayed&#xD;
+-&gt; done: WrsLoginStepDefinitions.ThenWRSHomePageIsDisplayed() (3.9s)&#xD;
+</Text>
+      </RunInfo>
+      <RunInfo computerName="SGP-LT-00846" outcome="Warning" timestamp="2025-05-29T15:18:12.0732518+01:00">
+        <Text>When I create a pet using the API&#xD;
+-&gt; done: PetCreateDeleteAPIStepDefinitions.WhenICreateAPetUsingTheAPI() (0.9s)&#xD;
+Then the pet should be created successfully&#xD;
+-&gt; done: PetCreateDeleteAPIStepDefinitions.ThenThePetShouldBeCreatedSuccessfully() (0.0s)&#xD;
+</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

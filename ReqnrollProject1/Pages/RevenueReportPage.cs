@@ -15,12 +15,12 @@ namespace ReqnrollProject1.Pages
         {
             this._page = page;
         }
-        private ILocator revenueReportHeader => _page.GetByText("Revenue Report");
+        private ILocator revenueReportHeader => _page.Locator("xpath = //*[contains(text(),'Revenue Report Summary')]");
 
 
         public async Task verifyRevenuePage()
         {
-            await Assertions.Expect(revenueReportHeader).ToBeDisabledAsync();
+            await Assertions.Expect(revenueReportHeader).ToBeVisibleAsync();
         }
     }
 }

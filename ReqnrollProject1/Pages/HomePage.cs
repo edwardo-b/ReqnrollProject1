@@ -17,17 +17,17 @@ namespace ReqnrollProject1.Pages
         }
 
         private ILocator welcomeMsg => _page.GetByText("Welcome to Reporter");
-        private ILocator liabilitiesBtn => _page.Locator("xpath=//*[contains(@href,'liability-report')]");
+        private ILocator liabilityBtn => _page.Locator("xpath=//*[contains(@href,'liability-report')]");
         private ILocator revenueBtn => _page.Locator("xpath=//*[contains(@href,'revenue-report')]");
-        private ILocator significantEventBtn => _page.Locator("xpath=//*[contains(@href,'sample-report')]");
-        private ILocator futureEventssBtn => _page.Locator("xpath=//*[contains(@href,'sample-report')]");
+        private ILocator significantEventBtn => _page.Locator("xpath=//*[contains(@href,'sample-report')]").Nth(0);
+        private ILocator futureEventssBtn => _page.Locator("xpath=//*[contains(@href,'sample-report')]").Nth(1);
         private ILocator homeBtn => _page.GetByText("Home");
 
 
 
         public async Task clickLiabilitiesBtn()
         {
-            await liabilitiesBtn.ClickAsync();
+            await liabilityBtn.ClickAsync();
         }
         public async Task clickRevenueBtn()
         {
@@ -41,7 +41,7 @@ namespace ReqnrollProject1.Pages
         {
             await futureEventssBtn.ClickAsync();
         }
-        public async Task cliclHome()
+        public async Task clickHome()
         {
             await homeBtn.ClickAsync();
         }

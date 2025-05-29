@@ -1,7 +1,9 @@
 using NUnit.Framework;
+using Reqnroll.BoDi;
 using ReqnrollProject1.API.Models;
 using ReqnrollProject1.Utils;
 using RestSharp;
+using System.ComponentModel;
 
 namespace ReqnrollProject1.API.StepDefinitions
 {
@@ -10,11 +12,14 @@ namespace ReqnrollProject1.API.StepDefinitions
     {
         private RestResponse _response;
         private readonly ScenarioContext _scenarioContext;
+        private readonly PetStoreApiUtils _petStoreApi;
 
-        public PetCreateDeleteAPIStepDefinitions(ScenarioContext scenarioContext)
+        public PetCreateDeleteAPIStepDefinitions(ScenarioContext scenarioContext, IObjectContainer container)
         {
             _scenarioContext = scenarioContext;
             _response = new RestResponse();
+
+            _petStoreApi = container.Resolve<PetStoreApiUtils>();
         }
 
         [When("I create a pet using the API")]
@@ -25,9 +30,9 @@ namespace ReqnrollProject1.API.StepDefinitions
                 ConfigReader.GetTestDataValue("petName"),
                 ConfigReader.GetTestDataValue("petStatus"));
 
-            _response = PetStoreApiUtils.PostPet(pet);
+            _response = _petStoreApi.PostPet(pet);
 
-            _scenarioContext["deleteResource"] = $"pet/{pet.Id}";
+            //_scenarioContext["deleteResource"] = $"pet/{pet.Id}";
         }
 
         [Then("the pet should be created successfully")]

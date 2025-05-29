@@ -64,7 +64,8 @@ namespace ReqnrollProject1.StepDefinitions
 
         [Then("the Significant Events page is opened")]
         public async Task ThenTheSignificantEventsPageIsOpened()
-        {await significantEventsPage.verifySignificanEvtPage();
+        {
+            await significantEventsPage.verifySignificanEvtPage();
         }
 
         [When("I click on Future Events")]
@@ -78,5 +79,17 @@ namespace ReqnrollProject1.StepDefinitions
         {
             await futureEventsPage.verifyFutureEventsPage();
         }
+        [When("I click home button")]
+        public async Task WhenIClickHomeButton()
+        {
+            await homePage.clickHome();
+        }
+
+        [When("WRS Home page is displayed")]
+        public async Task WhenWRSHomePageIsDisplayed()
+        {
+            await homePage.isHomePageDisplayed();
+        }
+
     }
 }

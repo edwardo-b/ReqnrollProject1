@@ -1,11 +1,15 @@
 using System;
 using System.Security.Policy;
+using System.Threading.Tasks;
+using FluentAssertions;
 using Microsoft.Playwright;
+using NUnit.Framework;
 using Reqnroll;
 using Reqnroll.BoDi;
 using ReqnrollProject1.Pages;
 using ReqnrollProject1.Resources.Configuration;
 using ReqnrollProject1.Utils;
+
 
 namespace ReqnrollProject1.StepDefinitions
 {
@@ -16,12 +20,14 @@ namespace ReqnrollProject1.StepDefinitions
         private readonly IObjectContainer _objectContainer;
         private readonly IPage _page;
         private readonly LoginPage loginPage;
+        private readonly HomePage homePage;
         public WrsLoginStepDefinitions(ScenarioContext scenarioContext, IObjectContainer objectContainer)
         {
             _scenarioContext = scenarioContext;
             _objectContainer = objectContainer;
             _page = _objectContainer.Resolve<IPage>();
             loginPage = _objectContainer.Resolve<LoginPage>();
+            homePage = _objectContainer.Resolve<HomePage>();    
         }
 
         [Given("I navigate to WRS")]
@@ -32,16 +38,19 @@ namespace ReqnrollProject1.StepDefinitions
             await _page.GotoAsync(url);
         }
 
-        [When("I log in as manager on CMS Login page")]
-        public void WhenILogInAsManagerOnCMSLoginPage()
+        [When("I log in as manager on Wrs Login page")]
+        public void WhenILogInAsManagerOnWrsLoginPage()
         {
-            throw new PendingStepException();
+            var pagetitle = _page.TitleAsync();
+            Assertions.Equals(pagetitle, "Betfred.Reporter.UI");
+
         }
 
+
         [Then("WRS Home page is displayed")]
-        public void ThenWRSHomePageIsDisplayed()
+        public async Task ThenWRSHomePageIsDisplayed()
         {
-            throw new PendingStepException();
+            await homePage.isHomePageDisplayed();
         }
     }
 }

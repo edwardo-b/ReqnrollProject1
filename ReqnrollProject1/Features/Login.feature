@@ -14,7 +14,7 @@ Scenario: [Login with username]
 @UI
 Scenario: WRS Login Check
 	Given I navigate to WRS
-	When I log in as manager on CMS Login page
+	When I log in as manager on Wrs Login page
 	Then WRS Home page is displayed
 
 

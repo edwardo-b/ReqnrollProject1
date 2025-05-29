@@ -1,0 +1,11 @@
+{
+  "unitTestProvider": {
+    "name": "nunit"
+  },
+  "plugins": [
+    {
+      "name": "Reqnroll.NUnit",
+      "type": "UnitTestProvider"
+    }
+  ]
+}

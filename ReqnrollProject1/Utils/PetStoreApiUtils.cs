@@ -1,49 +1,53 @@
 ﻿using ReqnrollProject1.API.Models;
 using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace ReqnrollProject1.Utils
 {
     internal class PetStoreApiUtils
     {
+        private readonly ApiUtils _apiUtils;
         private static readonly string GetEndpoint = "pet/";
         private static readonly string PostEndpoint = "pet/";
 
-        public static Pet GetPetById(long id)
+        public PetStoreApiUtils(ApiUtils apiUtils)
         {
-            return DeserializePetResponse(
-                ApiUtils.SendGetRequest(GetEndpoint + id));
+            _apiUtils = apiUtils;
         }
 
-        public static RestResponse PostPet(Pet pet)
+        public Pet GetPetById(long id)
         {
-            return ApiUtils.SendPostRequest(PostEndpoint, pet);
+            return DeserializePetResponse(_apiUtils.SendGetRequest(GetEndpoint + id));
         }
 
-
-        public static bool PostPetIsSuccessful(Pet pet)
+        public RestResponse PostPet(Pet pet)
         {
-
-            //implement a logic of sending a post request with a verification of success
-            DeserializePetResponse(ApiUtils.SendPostRequest(PostEndpoint, pet));
-            return false;
-        }
-        public static bool PutPetIsSuccessful(Pet pet)
-        {
-            //implement a logic of sending a post request with a verification of success
-            DeserializePetResponse(ApiUtils.SendPutRequest(PostEndpoint, pet));
-            return false;
-        }
-        public static void DeletePetById(string id)
-        {
-            ApiUtils.SendDeleteRequest(PostEndpoint + id);
+            return _apiUtils.SendPostRequest(PostEndpoint, pet);
         }
 
+        public bool PostPetIsSuccessful(Pet pet)
+        {
+            var response = _apiUtils.SendPostRequest(PostEndpoint, pet);
+            var petResult = DeserializePetResponse(response);
+            return response.IsSuccessful && petResult?.Id > 0;
+        }
+
+        public bool PutPetIsSuccessful(Pet pet)
+        {
+            var response = _apiUtils.SendPutRequest(PostEndpoint, pet);
+            var petResult = DeserializePetResponse(response);
+            return response.IsSuccessful && petResult?.Id == pet.Id;
+        }
+
+        public void DeletePetById(string id)
+        {
+            _apiUtils.SendDeleteRequest(PostEndpoint + id);
+        }
+
+        public RestResponse PutPetById(Pet pet)
+        {
+            return _apiUtils.SendPutRequest(PostEndpoint, pet);
+        }
 
         private static Pet DeserializePetResponse(RestResponse petResponse)
         {
@@ -51,11 +55,8 @@ namespace ReqnrollProject1.Utils
             {
                 PropertyNameCaseInsensitive = true
             };
+
             return JsonSerializer.Deserialize<Pet>(petResponse.Content!, options)!;
-        }
-        public static RestResponse PutPetById(Pet pet)
-        {
-            return ApiUtils.SendPutRequest(PostEndpoint, pet);
         }
     }
 }
