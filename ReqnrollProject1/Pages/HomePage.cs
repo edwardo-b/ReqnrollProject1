@@ -17,10 +17,10 @@ namespace ReqnrollProject1.Pages
         }
 
         private ILocator welcomeMsg => _page.GetByText("Welcome to Reporter");
-        private ILocator liabilityBtn => _page.Locator("xpath=//*[contains(@href,'liability-report')]");
-        private ILocator revenueBtn => _page.Locator("xpath=//*[contains(@href,'revenue-report')]");
-        private ILocator significantEventBtn => _page.Locator("xpath=//*[contains(@href,'sample-report')]").Nth(0);
-        private ILocator futureEventssBtn => _page.Locator("xpath=//*[contains(@href,'sample-report')]").Nth(1);
+        private ILocator liabilityBtn => _page.Locator("xpath=(//*[@class='d-inline-flex align-items-center'])[1]");
+        private ILocator revenueBtn => _page.Locator("xpath=(//*[@class='d-inline-flex align-items-center'])[2]");
+        private ILocator significantEventBtn => _page.Locator("xpath=(//*[@class='d-inline-flex align-items-center'])[3]");
+        private ILocator futureEventssBtn => _page.Locator("xpath=(//*[@class='d-inline-flex align-items-center'])[4]");
         private ILocator homeBtn => _page.GetByText("Home");
 
 

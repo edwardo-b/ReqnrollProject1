@@ -56,8 +56,8 @@ namespace ReqnrollProject1.Hook
                 case "edge":
                     browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
                     {
-                        Headless = false,
-                        SlowMo = 1000
+                        Headless = true,
+                        //SlowMo = 0
                     });
                     break;
 

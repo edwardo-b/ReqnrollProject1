@@ -39,10 +39,11 @@ namespace ReqnrollProject1.StepDefinitions
         }
 
         [When("I log in as manager on Wrs Login page")]
-        public void WhenILogInAsManagerOnWrsLoginPage()
+        public async Task WhenILogInAsManagerOnWrsLoginPage()
         {
             var pagetitle = _page.TitleAsync();
             Assertions.Equals(pagetitle, "Betfred.Reporter.UI");
+            await _page.ReloadAsync();
 
         }
 

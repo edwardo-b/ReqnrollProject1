@@ -4,6 +4,6 @@
     "baseRequestUrl": "https://petstore.swagger.io/v2/",
     "webUIUrl": "https://the-internet.herokuapp.com/",
     "CmsUrl": "cms-sgp.domain",
-    "WrsUrl": "http://reporter-frontend-service-47731015.eu-west-2.elb.amazonaws.com/"
+    "WrsUrl": "https://app.dev.reporter.sharpgaming.net/"
   }
 }

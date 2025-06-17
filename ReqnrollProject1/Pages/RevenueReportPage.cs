@@ -15,7 +15,7 @@ namespace ReqnrollProject1.Pages
         {
             this._page = page;
         }
-        private ILocator revenueReportHeader => _page.Locator("xpath = //*[contains(text(),'Revenue Report Summary')]");
+        private ILocator revenueReportHeader => _page.Locator("xpath = //*[contains(text(),'Revenue Report')]");
 
 
         public async Task verifyRevenuePage()

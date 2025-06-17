@@ -14,7 +14,7 @@ namespace ReqnrollProject1.Pages
         {
             _page = page;
         }
-        private ILocator significantEvtHeader => _page.GetByText("Sample Report").Nth(0);
+        private ILocator significantEvtHeader => _page.GetByText("Significant Events").Nth(0);
 
         public async Task verifySignificanEvtPage()
         {
