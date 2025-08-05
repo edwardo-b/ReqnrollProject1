@@ -18,7 +18,6 @@ namespace ReqnrollProject1.API.StepDefinitions
         {
             _scenarioContext = scenarioContext;
             _response = new RestResponse();
-
             _petStoreApi = container.Resolve<PetStoreApiUtils>();
         }
 
